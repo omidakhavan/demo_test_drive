@@ -1,15 +1,16 @@
 <?php
 /**
- * WordPress settings API demo class
- *
- * @author Tareq Hasan
- */
+ * @link              http://webnus.biz
+ * @since             1.0.0
+ * @package           webnus demo
+ * */
+
 require_once plugin_dir_path(__FILE__) . 'class.php' ; 
-if ( !class_exists('Avma_Settings' ) ):
-class Avma_Settings {
+if ( !class_exists('Wed_Setting' ) ):
+class Wed_Setting {
     private $settings_api;
     function __construct() {
-        $this->settings_api = new Avma_Settings_API;
+        $this->settings_api = new Wed_Setting_Api;
         add_action( 'admin_init', array($this, 'admin_init') );
         add_action( 'admin_menu', array($this, 'admin_menu') );
     }
@@ -42,24 +43,33 @@ class Avma_Settings {
         $settings_fields = array(
             'general_tab' => array(
                 array(
+                    'name'    => 'wed_active',
+                    'label'   => __( 'Activation', 'webnus_demo' ),
+                    'type'    => 'radio',
+                    'options' => array(
+                        'yes' => 'Yes',
+                        'no'  => 'No'
+                    )
+                ),
+                array(
                     'name'              => 'wed_user_name',
                     'label'             => __( 'User Name', 'webnus_demo' ),
                     'desc'              => __( 'Enter User Name', 'webnus_demo' ),
                     'type'              => 'text',
-                    'default'           => 'Title'
+                    'default'           => ''
                 ),
                 array(
                     'name'              => 'wed_password',
-                    'label'             => __( 'Email', 'webnus_demo' ),
-                    'desc'              => __( 'Text input description', 'webnus_demo' ),
+                    'label'             => __( 'password', 'webnus_demo' ),
+                    'desc'              => __( 'Enter password', 'webnus_demo' ),
                     'type'              => 'password'
                 ),
                 array(
                     'name'              => 'wed_mail',
                     'label'             => __( 'Email', 'webnus_demo' ),
-                    'desc'              => __( 'Text input description', 'webnus_demo' ),
+                    'desc'              => __( 'Enter mail', 'webnus_demo' ),
                     'type'              => 'text',
-                    'default'           => 'example@example.com'
+                    'default'           => ''
                 ),
             array(
                     'name'              => 'loginpageid',

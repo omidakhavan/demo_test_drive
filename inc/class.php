@@ -1,15 +1,12 @@
 <?php
 /**
- * weDevs Settings API wrapper class
- *
- * @version 1.2 (18-Oct-2015)
- *
- * @author Tareq Hasan <tareq@weDevs.com>
- * @link http://tareq.weDevs.com Tareq's Planet
- * @example src/settings-api.php How to use the class
- */
-if ( !class_exists( 'Avma_Settings_Api' ) ):
-class Avma_Settings_Api {
+ * @link              http://webnus.biz
+ * @since             1.0.0
+ * @package           webnus demo
+ * */
+
+if ( !class_exists( 'Wed_Setting_Api' ) ):
+class Wed_Setting_Api {
     /**
      * settings sections array
      *
